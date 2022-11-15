@@ -6,9 +6,10 @@ from hometasks import delete_nonunique, dict_values_to_list, find_visits_to_coun
 
 
 class TestFunc():
-    
+    '''This test class contains 4 tests for each function in hometask.
+    Fixtures are located in test_fixtures.py'''
     @pytest.mark.parametrize('_list, etalon',test_fixtures.FIXTURE_NONUNIQUE)
-    def test_nonunique_deletion_1(self, _list, etalon):
+    def test_nonunique_deletion_1(self, _list:list, etalon:list):
         result = delete_nonunique(_list)
         assert result == etalon
         
