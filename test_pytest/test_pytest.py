@@ -5,7 +5,7 @@ sys.path.append(r'c:/Users/AGordeyev/Program Files/Projects/tests_hometask')
 from hometasks import delete_nonunique, dict_values_to_list, find_visits_to_country, get_percentage_of_query_by_words
 
 
-class TestFunc():
+class HometaskTestFunc():
     '''This test class contains 4 tests for each function in hometask.
     Fixtures are located in test_fixtures.py'''
     @pytest.mark.parametrize('_list, etalon',test_fixtures.FIXTURE_NONUNIQUE)
@@ -26,4 +26,4 @@ class TestFunc():
     @pytest.mark.parametrize('words_count, queries, etalon', test_fixtures.FIXTURE_QUERIES)    
     def test_get_query_percentage(self, words_count, queries, etalon):
         result = get_percentage_of_query_by_words(words_count, queries)
-        assert result == etalon
+        assert result == etalon   
