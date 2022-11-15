@@ -26,6 +26,3 @@ def get_percentage_of_query_by_words(words_count, queries:list):
         queries_words_count[len(elem.split())] = queries_words_count.get(len(elem.split()), 0) + 1
     return queries_words_count[words_count]
 #----------------------------------
-print(delete_nonunique(dict_values_to_list(IDs)))
-# print(find_visits_to_country('Россия', GEO_LOGS))
-# print(get_percentage_of_query_by_words(3, QUERIES))
