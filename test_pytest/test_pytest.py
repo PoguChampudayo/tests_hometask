@@ -1,11 +1,12 @@
 import pytest
 import sys
+import os
 import test_fixtures
-sys.path.append(r'c:/Users/AGordeyev/Program Files/Projects/tests_hometask')
+sys.path.append(os.getcwd())
 from hometasks import delete_nonunique, dict_values_to_list, find_visits_to_country, get_percentage_of_query_by_words
 
 
-class HometaskTestFunc():
+class TestHometaskFunc():
     '''This test class contains 4 tests for each function in hometask.
     Fixtures are located in test_fixtures.py'''
     @pytest.mark.parametrize('_list, etalon',test_fixtures.FIXTURE_NONUNIQUE)
