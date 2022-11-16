@@ -8,10 +8,16 @@ class TestYaAPI(unittest.TestCase):
 
     def __init__(self, methodName: str = ...) -> None:
         super().__init__(methodName)
-        self.folder = 'test'
+        self.correct_folder = 'test'
+        self.wrong_folder = 'test//'
         
-    def test_response(self):
-        self.assertEqual(create_YaDisk_folder(self.folder), 201)
+    def test_good_response(self):
+        self.assertEqual(create_YaDisk_folder(self.correct_folder), 201)
+        
+        
+    def test_bad_response(self):
+        self.assertEqual(create_YaDisk_folder(self.wrong_folder), 404)
         
     def test_folder_creation(self):
-        self.assertTrue(check_for_folder(self.folder).status_code == 200)
+        create_YaDisk_folder(self.correct_folder)
+        self.assertTrue(check_for_folder(self.correct_folder).status_code == 200)

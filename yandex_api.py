@@ -26,7 +26,6 @@ def create_YaDisk_folder(folder_name):
         response = requests.put(url, params=params, headers=headers)
         if response.status_code != 201:
             print('Произошла ошибка при создании папки')
-            os._exit(0)
         return response.status_code
     else:
         return 201
