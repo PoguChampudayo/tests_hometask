@@ -1,7 +1,7 @@
 import requests
 import os
-with open('yatoken.txt', encoding='utf-8') as file:
-        ya_token = file.read().split()
+with open('ya_token.txt', encoding='utf-8') as file:
+    ya_token = file.read()
 
 def get_YaDisk_headers(ya_token):
         return {
@@ -28,4 +28,6 @@ def create_YaDisk_folder(folder_name):
             print('Произошла ошибка при создании папки')
             os._exit(0)
         return response
+
+# create_YaDisk_folder('test')
     
